@@ -2,17 +2,79 @@
 	<head>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <script>
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+
+    // FOR LOOP THAT WILL RUN THROUGH DATA SET
+	
+	 // var counter = document.createElement ('div');
+  //   	counter.class = "inBoxCounter";
+  //   	counter.innerHTML = geemails.length;
+  //   	wrapper.appendChild(counter);
+
+    for( var i = 0; i < geemails.length; i++){
+
+    	// console.log(geemails[i]);
+
+
+		var send = document.createElement('div');
+    	send.className = "sender";
+    	send.innerHTML = geemails[i].sender;
+    	wrapper.appendChild(send);
+
+    	var time = document.createElement('div');
+    	time.className = "recieveTime";
+    	time.innerHTML = geemails[i].date;
+    	wrapper.appendChild(time);
+
+    	var subj = document.createElement('button');
+    	subj.className = "subjects";
+    	subj.innerHTML = geemails[i].subject;
+    	wrapper.appendChild(subj);
+
+    	var bod = document.createElement('div');
+    	bod.className = "messageBody";
+    	bod.innerHTML = geemails[i].body;
+    	wrapper.appendChild(subj);
+
+       
+    }
+    
+ var content = getElementsByClassName('subjects');
+            for( var p = 0; p<content.length; p++){
+                content[p].addEventListner('click', subBod);
+            }
+
+            function subBod(){
+                var text = this.querySelectorAll('.messageBody')[0];
+                if(text.style.display === 'none'){
+                    text.style.display = 'block';
+                } else {
+                    text.style.display = 'none';
+                }
+            }
+
+
+  
       };
     </script>
 	</head>
 	<body>
+        <!-- header -->
+        <header>
+        <h1>Your Emails</h1>
+        </header>
+
+
+        <!-- body -->
 		<div class="container" id="main">
-			Build Me!
+			
+			<div id= "inBoxCounter"></div>
+
+			<div id="wrapper"></div>
 		</div>
 	</body>
 </html>
