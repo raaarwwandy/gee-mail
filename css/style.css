@@ -1,0 +1,44 @@
+body{
+	background: linear-gradient(blue, purple);
+}
+
+header{
+	width: 1500px;
+	margin: 0 auto;
+}
+
+h1{
+	text-align: center;
+}
+
+#main{
+	width: 1500px;
+	margin: 0 auto;
+	background: white;
+
+}
+
+.messageBody{
+	display: none;
+}
+
+#wrapper{
+	margin-bottom: 20px;
+}
+
+.subjects:hover{
+	color: red;
+}
+
+button.subjects{
+    border: none;
+    color: white;
+        box-sizing: none;
+            background-color: none;
+
+    /*padding: 15px 32px;*/
+    /*text-align: center;*/
+    /*text-decoration: none;*/
+    /*display: inline-block;*/
+}
+
