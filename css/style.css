@@ -18,9 +18,6 @@ h1{
 
 }
 
-.messageBody{
-	display: none;
-}
 
 #wrapper{
 	margin-bottom: 20px;
@@ -30,15 +27,7 @@ h1{
 	color: red;
 }
 
-button.subjects{
-    border: none;
-    color: white;
-        box-sizing: none;
-            background-color: none;
 
-    /*padding: 15px 32px;*/
-    /*text-align: center;*/
-    /*text-decoration: none;*/
-    /*display: inline-block;*/
+.messageBody{
+	display: none;
 }
-
