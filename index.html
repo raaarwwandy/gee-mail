@@ -17,12 +17,16 @@
   //   	counter.innerHTML = geemails.length;
   //   	wrapper.appendChild(counter);
 
+  var folders= [ {
+  star : "Starred", important: "Important", drafts: "Drafts", sent: "Sent Mail", trash : "Trash"}];
+  console.log(folders);
+
     for( var i = 0; i < geemails.length; i++){
 
     	// console.log(geemails[i]);
 
-        var counter = document.getElementById('inBoxCounter');
-        counter.innerHTML=" Inbox " + "(" + geemails.length + ")";
+        // var counter = document.getElementById('inBoxCounter');
+        // counter.innerHTML="Devleague Inbox " + "(" + geemails.length + ")";
 
 		var send = document.createElement('div');
     	send.className = "sender";
@@ -62,7 +66,37 @@
                 }
             }
 
-// SETINTERVAL            
+// folders
+var counter = document.getElementById('inBoxCounter');
+        counter.innerHTML="Devleague Inbox " + "(" + geemails.length + ")";
+
+        // console.log(folders[0].star);
+        var star = document.createElement('li');
+        star.className = "Starred";
+        star.innerHTML = folders[0].star; 
+        counter.appendChild(star);
+
+        var imp = document.createElement('li');
+        imp.className = "important";
+        imp.innerHTML = folders[0].important; 
+        counter.appendChild(imp);
+
+        var draf = document.createElement('li');
+        draf.className = "drafts";
+        draf.innerHTML = folders[0].drafts; 
+        counter.appendChild(draf);
+
+        var sent = document.createElement('li');
+        sent.className = "sent";
+        sent.innerHTML = folders[0].sent; 
+        counter.appendChild(sent);
+
+        var trash = document.createElement('li');
+        trash.className = "trash";
+        trash.innerHTML = folders[0].trash; 
+        counter.appendChild(trash);
+
+// Creation of new emails           
 function newMail(){
 
     var newMessage = getNewMessage();
@@ -87,7 +121,7 @@ function newMail(){
         bod.innerHTML = newMessage.body;
         subj.appendChild(bod);
 
-// TOGGLE
+// // TOGGLE
      var newContent = document.getElementsByClassName("subjects");
                 for( var q = 0; q<newContent.length; q++){
                     
@@ -103,15 +137,38 @@ function newMail(){
                     }
                 }
  var counter = document.getElementById('inBoxCounter');
-  counter.innerHTML= "Inbox " + "(" + newContent.length++ + ")";     
-}
+   counter.innerHTML= "Devleague Inbox " + "(" + newContent.length++ + ")"; 
+       var star = document.createElement('li');
+        star.className = "Starred";
+        star.innerHTML = folders[0].star; 
+        counter.appendChild(star);
+
+        var imp = document.createElement('li');
+        imp.className = "important";
+        imp.innerHTML = folders[0].important; 
+        counter.appendChild(imp);
+
+        var draf = document.createElement('li');
+        draf.className = "drafts";
+        draf.innerHTML = folders[0].drafts; 
+        counter.appendChild(draf);
+
+        var sent = document.createElement('li');
+        sent.className = "sent";
+        sent.innerHTML = folders[0].sent; 
+        counter.appendChild(sent);
+
+        var trash = document.createElement('li');
+        trash.className = "trash";
+        trash.innerHTML = folders[0].trash; 
+        counter.appendChild(trash);    
+ }
 
 
 
-// INTERVAL
-setInterval(newMail,6000);
+// // INTERVAL
+ setInterval(newMail,6000);
 
-// COUNTER
 
 
 
@@ -123,7 +180,7 @@ setInterval(newMail,6000);
 	<body>
         <!-- header -->
         <header>
-        <h1>GEEMAILS</h1>
+        <h1>DEVLEAGUE GEEMAILS</h1>
 
         </header>
 
@@ -132,14 +189,7 @@ setInterval(newMail,6000);
 	<div class="container" id="main">
 			
 			<div id= "inBoxCounter">
-                    <ul>
-                    <li>Compose Email</li>
-                    <li>Drafts</li>
-                    <li>Junk</li>
-                    <li>Trash</li>
-                </ul>        
             </div>
-           
 
 
 			<div id="wrapper"></div>
