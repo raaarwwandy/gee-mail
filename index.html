@@ -2,7 +2,9 @@
 	<head>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
-		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+		<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+
     <script>
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
@@ -20,7 +22,7 @@
     	// console.log(geemails[i]);
 
         var counter = document.getElementById('inBoxCounter');
-        counter.innerHTML= geemails.length;
+        counter.innerHTML=" Inbox " + "(" + geemails.length + ")";
 
 		var send = document.createElement('div');
     	send.className = "sender";
@@ -30,12 +32,12 @@
     	var time = document.createElement('div');
     	time.className = "recieveTime";
     	time.innerHTML = geemails[i].date;
-    	wrapper.appendChild(time);
+    	send.appendChild(time);
 
     	var subj = document.createElement('div');
     	subj.className = "subjects";
     	subj.innerHTML = geemails[i].subject;
-    	wrapper.appendChild(subj);
+    	time.appendChild(subj);
 
     	var bod = document.createElement('div');
     	bod.className = "messageBody";
@@ -73,12 +75,12 @@ function newMail(){
         var time = document.createElement('div');
         time.className = "recieveTime";
         time.innerHTML = newMessage.date;
-        wrapper.appendChild(time);
+        send.appendChild(time);
 
         var subj = document.createElement('div');
         subj.className = "subjects";
         subj.innerHTML = newMessage.subject;
-        wrapper.appendChild(subj);
+        time.appendChild(subj);
 
         var bod = document.createElement('div');
         bod.className = "messageBody";
@@ -100,8 +102,8 @@ function newMail(){
                         newContent.style.display = 'none';
                     }
                 }
- 
-  counter.innerHTML= newContent.length++;     
+ var counter = document.getElementById('inBoxCounter');
+  counter.innerHTML= "Inbox " + "(" + newContent.length++ + ")";     
 }
 
 
@@ -121,16 +123,27 @@ setInterval(newMail,6000);
 	<body>
         <!-- header -->
         <header>
-        <h1>Your Emails</h1>
+        <h1>GEEMAILS</h1>
+
         </header>
 
 
         <!-- body -->
-		<div class="container" id="main">
+	<div class="container" id="main">
 			
-			<div id= "inBoxCounter"></div>
+			<div id= "inBoxCounter">
+                    <ul>
+                    <li>Compose Email</li>
+                    <li>Drafts</li>
+                    <li>Junk</li>
+                    <li>Trash</li>
+                </ul>        
+            </div>
            
+
+
 			<div id="wrapper"></div>
-		</div>
+	</div>
+
 	</body>
 </html>
