@@ -1,18 +1,24 @@
 body{
 	background: linear-gradient(blue, purple);
+	
 }
 
 header{
-	width: 1500px;
+	/*width: 1500px;*/
 	margin: 0 auto;
 }
 
 h1{
 	text-align: center;
+	font-family: 'Alfa Slab One', cursive;
+	font-size: 50px;
+	letter-spacing: 3px;
+	border-bottom: double;
+	border-top: double; 
 }
 
-#main{
-	width: 1500px;
+.container{
+	width: 1200px;
 	margin: 0 auto;
 	background: white;
 
@@ -21,13 +27,40 @@ h1{
 
 #wrapper{
 	margin-bottom: 20px;
+	float: left;
+	/*background: white;*/
+
 }
 
-.subjects:hover{
-	color: red;
-}
 
 
 .messageBody{
 	display: none;
+	width: 800px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+.messageBody:hover{
+	color: black;
+}
+
+#inBoxCounter{
+	width: 200px;
+	float: left;
+}
+
+#actions{
+	width: 200px;
+	float: left;
+}
+
+.sender{
+	border-bottom: double;
+	width: 800px;
+	margin-bottom: 10px;
+}
+
+.sender:hover{
+	background-color: white;
 }
