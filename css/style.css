@@ -64,3 +64,9 @@ h1{
 .sender:hover{
 	background-color: white;
 }
+
+li{
+	text-decoration: none;
+	list-style: none;
+	padding-top: 10px;
+}
